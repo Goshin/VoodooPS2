@@ -698,11 +698,10 @@ void ApplePS2Controller::stop(IOService * provider)
   assert(!_powerControlInstalledMouse);
 
   // Free device matching notifiers
+  // remove() releases them
   _publishNotify->remove();
   _terminateNotify->remove();
-  OSSafeReleaseNULL(_publishNotify);
-  OSSafeReleaseNULL(_terminateNotify);
-    
+
   _notificationServices->flushCollection();
   OSSafeReleaseNULL(_notificationServices);
     
@@ -842,7 +841,7 @@ void ApplePS2Controller::uninstallInterruptAction(PS2DeviceType deviceType)
   //
 
   // Is it the keyboard or the mouse interrupt handler that was requested?
-  // We only install it if it is currently uninstalled.
+  // We only uninstall it if it is currently installed.
 
   if (deviceType == kDT_Keyboard && _interruptInstalledKeyboard)
   {
