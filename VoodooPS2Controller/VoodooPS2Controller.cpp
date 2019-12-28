@@ -560,11 +560,6 @@ bool ApplePS2Controller::start(IOService * provider)
   }
 #endif
     
-  //
-  // Reset and clean the 8042 keyboard/mouse controller.
-  //
-    
-  resetController();
 
   //
   // Use a spin lock to protect the client async request queue.
@@ -1904,14 +1899,6 @@ void ApplePS2Controller::setPowerStateGated( UInt32 powerState )
         if (_wakedelay)
             IOSleep(_wakedelay);
             
-#if FULL_INIT_AFTER_WAKE
-        //
-        // Reset and clean the 8042 keyboard/mouse controller.
-        //
-        
-        resetController();
-            
-#endif // FULL_INIT_AFTER_WAKE
             
 
         //
