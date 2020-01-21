@@ -11,6 +11,16 @@
 		356B896323007F4F0042F30F /* VoodooInputEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 356B895F23007F4F0042F30F /* VoodooInputEvent.h */; };
 		356B896423007F4F0042F30F /* VoodooInputTransducer.h in Headers */ = {isa = PBXBuildFile; fileRef = 356B896023007F4F0042F30F /* VoodooInputTransducer.h */; };
 		356B896523007F4F0042F30F /* MultitouchHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 356B896123007F4F0042F30F /* MultitouchHelpers.h */; };
+		7512626623D7A24D00B2B1BB /* DSDT-Patch in Copy Files */ = {isa = PBXBuildFile; fileRef = 7512626523D7A23400B2B1BB /* DSDT-Patch */; };
+		7533C46623D79AA10042DE16 /* install_daemon.sh in Copy Files */ = {isa = PBXBuildFile; fileRef = 75DAA4E723D7345100AF7D2D /* install_daemon.sh */; };
+		7533C46823D79BB30042DE16 /* com.tongfang.TongfangFnDaemon.plist in Copy Files */ = {isa = PBXBuildFile; fileRef = 7533C46723D79B700042DE16 /* com.tongfang.TongfangFnDaemon.plist */; };
+		757845DC23D73188003A7BF7 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757845DB23D73188003A7BF7 /* AppKit.framework */; };
+		757845DE23D7319E003A7BF7 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757845DD23D7319E003A7BF7 /* CoreServices.framework */; };
+		757845E023D731A5003A7BF7 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757845DF23D731A5003A7BF7 /* CoreWLAN.framework */; };
+		757845E223D731B7003A7BF7 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757845E123D731B7003A7BF7 /* IOBluetooth.framework */; };
+		757845E323D732A4003A7BF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 757845D323D730E2003A7BF7 /* main.m */; };
+		75DAA4E423D733C800AF7D2D /* KernEventServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75DAA4E223D733C700AF7D2D /* KernEventServer.cpp */; };
+		75DAA4E523D733C800AF7D2D /* KernEventServer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 75DAA4E323D733C700AF7D2D /* KernEventServer.hpp */; };
 		840F104A16EFE42600E8C116 /* ApplePS2Device.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840F104916EFE42600E8C116 /* ApplePS2Device.cpp */; };
 		84167820161B55B2002C60E6 /* VoodooPS2Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8416781F161B55B2002C60E6 /* VoodooPS2Controller.cpp */; };
 		84167836161B5613002C60E6 /* VoodooPS2Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84167835161B5613002C60E6 /* VoodooPS2Keyboard.cpp */; };
@@ -59,6 +69,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		757845D823D73147003A7BF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84167808161B55B2002C60E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 757845D023D730E2003A7BF7;
+			remoteInfo = TongfangFnDaemon;
+		};
 		CE7F450822E8A781003F7971 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84167808161B55B2002C60E6 /* Project object */;
@@ -82,11 +99,40 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		757845CF23D730E2003A7BF7 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				7512626623D7A24D00B2B1BB /* DSDT-Patch in Copy Files */,
+				7533C46823D79BB30042DE16 /* com.tongfang.TongfangFnDaemon.plist in Copy Files */,
+				7533C46623D79AA10042DE16 /* install_daemon.sh in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		356B895E23007F4F0042F30F /* VoodooInputMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoodooInputMessages.h; path = VoodooInput/VoodooInput/VoodooInputMultitouch/VoodooInputMessages.h; sourceTree = SOURCE_ROOT; };
 		356B895F23007F4F0042F30F /* VoodooInputEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoodooInputEvent.h; path = VoodooInput/VoodooInput/VoodooInputMultitouch/VoodooInputEvent.h; sourceTree = SOURCE_ROOT; };
 		356B896023007F4F0042F30F /* VoodooInputTransducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoodooInputTransducer.h; path = VoodooInput/VoodooInput/VoodooInputMultitouch/VoodooInputTransducer.h; sourceTree = SOURCE_ROOT; };
 		356B896123007F4F0042F30F /* MultitouchHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultitouchHelpers.h; path = VoodooInput/VoodooInput/VoodooInputMultitouch/MultitouchHelpers.h; sourceTree = SOURCE_ROOT; };
+		7512626523D7A23400B2B1BB /* DSDT-Patch */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "DSDT-Patch"; sourceTree = "<group>"; };
+		7533C46723D79B700042DE16 /* com.tongfang.TongfangFnDaemon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.tongfang.TongfangFnDaemon.plist; sourceTree = "<group>"; };
+		757845D123D730E2003A7BF7 /* TongfangFnDaemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TongfangFnDaemon; sourceTree = BUILT_PRODUCTS_DIR; };
+		757845D323D730E2003A7BF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		757845DB23D73188003A7BF7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		757845DD23D7319E003A7BF7 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		757845DF23D731A5003A7BF7 /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
+		757845E123D731B7003A7BF7 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		75DAA4E223D733C700AF7D2D /* KernEventServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KernEventServer.cpp; sourceTree = "<group>"; };
+		75DAA4E323D733C700AF7D2D /* KernEventServer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KernEventServer.hpp; sourceTree = "<group>"; };
+		75DAA4E623D7345100AF7D2D /* BezelServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezelServices.h; sourceTree = "<group>"; };
+		75DAA4E723D7345100AF7D2D /* install_daemon.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install_daemon.sh; sourceTree = "<group>"; };
+		75DAA4E823D7345100AF7D2D /* OSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSD.h; sourceTree = "<group>"; };
 		7B44762421D52A7100418B25 /* ApplePS2MouseDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplePS2MouseDevice.h; sourceTree = "<group>"; };
 		8404565C161E3AAF00D74D7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8404565F161E3AC300D74D7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -152,6 +198,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		757845CE23D730E2003A7BF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757845E023D731A5003A7BF7 /* CoreWLAN.framework in Frameworks */,
+				757845DC23D73188003A7BF7 /* AppKit.framework in Frameworks */,
+				757845DE23D7319E003A7BF7 /* CoreServices.framework in Frameworks */,
+				757845E223D731B7003A7BF7 /* IOBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8416780E161B55B2002C60E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +255,30 @@
 			name = "VoodooInput Headers";
 			sourceTree = "<group>";
 		};
+		757845D223D730E2003A7BF7 /* TongfangFnDaemon */ = {
+			isa = PBXGroup;
+			children = (
+				7512626523D7A23400B2B1BB /* DSDT-Patch */,
+				7533C46723D79B700042DE16 /* com.tongfang.TongfangFnDaemon.plist */,
+				75DAA4E623D7345100AF7D2D /* BezelServices.h */,
+				75DAA4E723D7345100AF7D2D /* install_daemon.sh */,
+				75DAA4E823D7345100AF7D2D /* OSD.h */,
+				757845D323D730E2003A7BF7 /* main.m */,
+			);
+			path = TongfangFnDaemon;
+			sourceTree = "<group>";
+		};
+		757845DA23D73188003A7BF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				757845E123D731B7003A7BF7 /* IOBluetooth.framework */,
+				757845DF23D731A5003A7BF7 /* CoreWLAN.framework */,
+				757845DD23D7319E003A7BF7 /* CoreServices.framework */,
+				757845DB23D73188003A7BF7 /* AppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84167806161B55B2002C60E6 = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +291,9 @@
 				8416782E161B5613002C60E6 /* VoodooPS2Keyboard */,
 				84167842161B56A2002C60E6 /* VoodooPS2Mouse */,
 				84167856161B56C4002C60E6 /* VoodooPS2Trackpad */,
+				757845D223D730E2003A7BF7 /* TongfangFnDaemon */,
 				84167814161B55B2002C60E6 /* Products */,
+				757845DA23D73188003A7BF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,6 +304,7 @@
 				8416782D161B5613002C60E6 /* VoodooPS2Keyboard.kext */,
 				84167841161B56A2002C60E6 /* VoodooPS2Mouse.kext */,
 				84167855161B56C4002C60E6 /* VoodooPS2Trackpad.kext */,
+				757845D123D730E2003A7BF7 /* TongfangFnDaemon */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +337,8 @@
 		8416782E161B5613002C60E6 /* VoodooPS2Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				75DAA4E223D733C700AF7D2D /* KernEventServer.cpp */,
+				75DAA4E323D733C700AF7D2D /* KernEventServer.hpp */,
 				84833FA9161B629500845294 /* ApplePS2ToADBMap.h */,
 				84167834161B5613002C60E6 /* VoodooPS2Keyboard.h */,
 				84167835161B5613002C60E6 /* VoodooPS2Keyboard.cpp */,
@@ -395,6 +481,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DAA4E523D733C800AF7D2D /* KernEventServer.hpp in Headers */,
 				CE86CCFC22E8BCEE00B32BE3 /* LegacyLibkernMacros.h in Headers */,
 				84833FAA161B629500845294 /* ApplePS2ToADBMap.h in Headers */,
 				CE86CD0222E8BDE000B32BE3 /* LegacyIOHIKeyboard.h in Headers */,
@@ -437,6 +524,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		757845D023D730E2003A7BF7 /* TongfangFnDaemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 757845D523D730E2003A7BF7 /* Build configuration list for PBXNativeTarget "TongfangFnDaemon" */;
+			buildPhases = (
+				757845CD23D730E2003A7BF7 /* Sources */,
+				757845CE23D730E2003A7BF7 /* Frameworks */,
+				757845CF23D730E2003A7BF7 /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TongfangFnDaemon;
+			productName = TongfangFnDaemon;
+			productReference = 757845D123D730E2003A7BF7 /* TongfangFnDaemon */;
+			productType = "com.apple.product-type.tool";
+		};
 		84167812161B55B2002C60E6 /* VoodooPS2Controller */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84167824161B55B2002C60E6 /* Build configuration list for PBXNativeTarget "VoodooPS2Controller" */;
@@ -451,6 +555,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				757845D923D73147003A7BF7 /* PBXTargetDependency */,
 				CE7F450922E8A781003F7971 /* PBXTargetDependency */,
 				CE7F450B22E8A781003F7971 /* PBXTargetDependency */,
 				CE7F450D22E8A781003F7971 /* PBXTargetDependency */,
@@ -525,6 +630,12 @@
 			attributes = {
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Acidanthera;
+				TargetAttributes = {
+					757845D023D730E2003A7BF7 = {
+						CreatedOnToolsVersion = 11.3.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 8416780B161B55B2002C60E6 /* Build configuration list for PBXProject "VoodooPS2Controller" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -543,6 +654,7 @@
 				8416782C161B5613002C60E6 /* VoodooPS2Keyboard */,
 				84167840161B56A2002C60E6 /* VoodooPS2Mouse */,
 				84167854161B56C4002C60E6 /* VoodooPS2Trackpad */,
+				757845D023D730E2003A7BF7 /* TongfangFnDaemon */,
 			);
 		};
 /* End PBXProject section */
@@ -631,6 +743,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		757845CD23D730E2003A7BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757845E323D732A4003A7BF7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8416780D161B55B2002C60E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -649,6 +769,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84167836161B5613002C60E6 /* VoodooPS2Keyboard.cpp in Sources */,
+				75DAA4E423D733C800AF7D2D /* KernEventServer.cpp in Sources */,
 				CE86CCF222E8B0F800B32BE3 /* compat.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +797,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		757845D923D73147003A7BF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 757845D023D730E2003A7BF7 /* TongfangFnDaemon */;
+			targetProxy = 757845D823D73147003A7BF7 /* PBXContainerItemProxy */;
+		};
 		CE7F450922E8A781003F7971 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8416782C161B5613002C60E6 /* VoodooPS2Keyboard */;
@@ -729,6 +855,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		757845D623D730E2003A7BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		757845D723D730E2003A7BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		84167822161B55B2002C60E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1006,6 +1192,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		757845D523D730E2003A7BF7 /* Build configuration list for PBXNativeTarget "TongfangFnDaemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757845D623D730E2003A7BF7 /* Debug */,
+				757845D723D730E2003A7BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8416780B161B55B2002C60E6 /* Build configuration list for PBXProject "VoodooPS2Controller" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

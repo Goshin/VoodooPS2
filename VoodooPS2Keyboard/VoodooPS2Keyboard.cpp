@@ -44,6 +44,8 @@
 #include "AppleACPIPS2Nub.h"
 #include <IOKit/hidsystem/ev_keymap.h>
 
+#include "KernEventServer.hpp"
+
 
 // Constants for Info.plist settings
 
@@ -1455,6 +1457,24 @@ void ApplePS2Keyboard::onSleepEjectTimer()
     }
 }
 
+#define FnEventCode 0x8102
+enum {
+    toogleWifi = 1,
+    switchDisplay = 2,
+    enableTouchpad = 3,
+    disableTouchpad = 4,
+    decreaseKeyboardBacklight = 5,
+    increaseKeyboardBacklight = 6,
+};
+
+void fnKeySendMsgToDaemon(int type, int arg1, int arg2)
+{
+    KernEventServer kev;
+    kev.setVendorID("com.tongfang");
+    kev.setEventCode(FnEventCode);
+    kev.sendMessage(type, arg1, arg2);
+}
+
 bool ApplePS2Keyboard::dispatchKeyboardEventWithPacket(const UInt8* packet)
 {
     // Parses the given scan code, updating all necessary internal state, and
@@ -1612,18 +1632,24 @@ bool ApplePS2Keyboard::dispatchKeyboardEventWithPacket(const UInt8* packet)
 
         //REVIEW: this is getting a bit ugly
         case 0x0128:    // alternate that cannot fnkeys toggle (discrete trackpad toggle)
+        case 0x76:      // Fn + F5
         case 0x0137:    // prt sc/sys rq
         {
             unsigned origKeyCode = keyCode;
             keyCode = 0;
             if (!goingDown)
                 break;
-            if (!checkModifierState(kMaskLeftControl))
+            if (checkModifierState(kMaskLeftControl) && checkModifierState(kMaskLeftWindows))
             {
                 // get current enabled status, and toggle it
                 bool enabled;
                 _device->dispatchMessage(kPS2M_getDisableTouchpad, &enabled);
                 enabled = !enabled;
+                if (enabled) {
+                    fnKeySendMsgToDaemon(enableTouchpad, 0, 0);
+                } else {
+                    fnKeySendMsgToDaemon(disableTouchpad, 0, 0);
+                }
                 _device->dispatchMessage(kPS2M_setDisableTouchpad, &enabled);
                 break;
             }
@@ -1656,6 +1682,45 @@ bool ApplePS2Keyboard::dispatchKeyboardEventWithPacket(const UInt8* packet)
                 }
             }
             break;
+        case 0x19:      // Fn + F3 => Win + P
+        {
+            if (!checkModifierState(kMaskLeftWindows))
+            {
+                break;
+            }
+            keyCode = 0;
+            if (!goingDown)
+                break;
+            IOLog("%s: Fn + F3\n", getName());
+            fnKeySendMsgToDaemon(switchDisplay, 0, 0);
+            break;
+        }
+        case 0x0160:    // Fn + F4: Turn WiFi on
+        case 0x0161:    // Fn + F4: Turn WiFi off
+        {
+            if (!goingDown)
+                break;
+            IOLog("%s: Fn + F4\n", getName());
+            fnKeySendMsgToDaemon(toogleWifi, 0, 0);
+            break;
+        }
+        case 0x0162:    // Fn + F6: Decrease Keyboard Backlight
+        {
+            if (!goingDown)
+                break;
+            IOLog("%s: Fn + F6\n", getName());
+            fnKeySendMsgToDaemon(decreaseKeyboardBacklight, 0, 0);
+            break;
+        }
+        case 0x0163:    // Fn + F7: Increase Keyboard Backlight
+        {
+            if (!goingDown)
+                break;
+            IOLog("%s: Fn + F7\n", getName());
+            fnKeySendMsgToDaemon(increaseKeyboardBacklight, 0, 0);
+            break;
+        }
+
     }
 
 #ifdef DEBUG
