@@ -3,26 +3,33 @@ VoodooPS2
 
 适用于同方部分机型的 VoodooPS2 键盘相关驱动，修复兼容问题，支持所有 Fn 功能键。
 
-## Fn 功能键
+Custom VoodooPS2 kernel extension series for **Tongfang** ODM laptops.
 
-| Fn + Fx  | 原设计功能        | 备注                                      |
-| -------- | ----------------- | ----------------------------------------- |
-| F1       | 休眠              | 通过系统的休眠流程，减少未知问题。        |
-| F2       | 锁定左 Win 键     | -                                         |
-| F3       | 切换副屏显示模式  | 实现为打开显示设置                        |
-| F4       | 打开/禁用无线网络 | -                                         |
-| F5       | 打开/禁用触摸板   | 也可通过双击触摸板左上角切换，与 Win 一致 |
-| F6, F7   | 减少/增加键盘背光 | -                                         |
-| F8 - F10 | 音量调节          | -                                         |
-| F10, F11 | 屏幕亮度调节      | -                                         |
+## Features
 
-## 安装
+- Fix Incompatibility.
+- Full Fn Key Functionality.
 
-1. 安装`VoodooPS2Controller.kext` 到 `kexts/Other`；
-2. 安装`SSDT-FN.aml` 到 `ACPI/patched`；
-3. 把 `clover-patch-config.txt` 内容并入 `config.plist` 的 dsdt patch 部分；
-4. 用 `install_daemon.sh` 安装 `TongfangFnDaemon`；
-5. 重启。
+## Fn Keys
+
+| Fn + Fx  | Function                             | Note                   |
+| -------- | ------------------------------------ | ---------------------- |
+| F1       | Sleep                                | -                      |
+| F2       | Lock LGUI Key                        | -                      |
+| F3       | Switch Screen Mirroring/Extended     | Open display settings. |
+| F4       | Toggle WiFi                          | -                      |
+| F5       | Toggle Touchpad                      | -                      |
+| F6, F7   | Increase/Decrease Keyboard Backlight | -                      |
+| F8 - F10 | Adjust Volume                        | -                      |
+| F10, F11 | Adjust Screen Backlight              | -                      |
+
+## Install
+
+1. Copy `VoodooPS2Controller.kext` into `kexts/Other`；
+2. Copy `SSDT-FN.aml` into `ACPI/patched`；
+3. Patch `clover-patch-config.txt` into DSDT section of `config.plist`；
+4. Install `TongfangFnDaemon` with `install_daemon.sh`；
+5. Reboot.
 
 ## Credits
 
