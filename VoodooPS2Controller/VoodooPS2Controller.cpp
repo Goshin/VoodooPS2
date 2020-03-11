@@ -490,9 +490,8 @@ bool ApplePS2Controller::start(IOService * provider)
   //
     
   PE_parse_boot_argn("ps2rst", &_resetControllerFlag, sizeof(_resetControllerFlag));
-  if (_resetControllerFlag & RESET_CONTROLLER_ON_BOOT) {
+  if (_resetControllerFlag & RESET_CONTROLLER_ON_BOOT)
     resetController();
-  }
 
   //
   // Use a spin lock to protect the client async request queue.
@@ -1860,9 +1859,7 @@ void ApplePS2Controller::setPowerStateGated( UInt32 powerState )
         //
         
         if (_resetControllerFlag & RESET_CONTROLLER_ON_WAKEUP)
-        {
           resetController();
-        }
             
 #endif // FULL_INIT_AFTER_WAKE
             
