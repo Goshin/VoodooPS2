@@ -1576,8 +1576,10 @@ void ApplePS2SynapticsTouchPad::sendTouchData() {
         super::messageClient(kIOMessageVoodooInputUpdateDimensionsMessage, voodooInputInstance, &d, sizeof(VoodooInputDimensions));
     }
 
-    // send the event into the multitouch interface
-    super::messageClient(kIOMessageVoodooInputMessage, voodooInputInstance, &inputEvent, sizeof(VoodooInputEvent));
+    if (inputEvent.contact_count) {
+        // send the event into the multitouch interface
+        super::messageClient(kIOMessageVoodooInputMessage, voodooInputInstance, &inputEvent, sizeof(VoodooInputEvent));
+    }
 
     lastFingerCount = clampedFingerCount;
 }
